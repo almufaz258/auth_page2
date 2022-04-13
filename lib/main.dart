@@ -20,15 +20,21 @@ class MyApp extends StatelessWidget {
         fontWeight: FontWeight.bold,
         color: Color(0xFF0079D0)
     );
+
     return MaterialApp(
       home: Scaffold(
         body: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/dl2.jpg"),
+              fit: BoxFit.cover,
+            ),
+          ),
           width: double.infinity,
-          child: SingleChildScrollView(
-            child: Column(children: [
+          child: Column(children: [
               SizedBox(height: 60,),
-              SizedBox(width: 110, height: 84, child: Image(
-                image: AssetImage('assets/dart-logo.png')),),
+              const SizedBox(width: 110, height: 84, child: Image(
+                image: AssetImage('assets/dart-logo 1.png')),),
               SizedBox(height: 20,),
               Text('Введите логин в виде 10 цифр вашего телефона',
               style: TextStyle(fontSize: 16, color: Color.fromRGBO(0, 0, 0, 0.6)),),
@@ -77,9 +83,8 @@ class MyApp extends StatelessWidget {
               InkWell(child: Text('Забыли пароль?', style: LinkTextStyle,),
                 onTap: () {},),
   ],),
-          ),
+   ),
   ),
- ),
-);
+ );
   }
 }
